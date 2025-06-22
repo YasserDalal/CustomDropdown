@@ -1,8 +1,8 @@
 
-export default function Buttons() {
+export default function Buttons({ className, children, setToggle, setter }) {
   return (
-    <div className='' typeof='button'>
-      <h1>Buttons</h1>
+    <div className={className} typeof='button' onClick={() => {setToggle(false), setter(children)}}>
+      {children}
     </div>
   );
 }

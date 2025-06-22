@@ -1,8 +1,8 @@
 
-export default function DefaultLists() {
+export default function DefaultLists({ className, children }) {
   return (
-    <div>
-      <h1>DefaultLists</h1>
-    </div>
+    <ul className={className}>
+      {children}
+    </ul>
   )
 }

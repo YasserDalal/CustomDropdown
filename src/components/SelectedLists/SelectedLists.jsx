@@ -1,8 +1,8 @@
 
-export default function SelectedLists() {
+export default function SelectedLists({ className, children }) {
   return (
-    <div>
-      <h1>SelectedLists</h1>
-    </div>
+    <ul className={className}>
+      {children}
+    </ul>
   )
 }
