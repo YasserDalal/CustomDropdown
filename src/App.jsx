@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 import DefaultState from "./components/DefaultState/DefaultState";
-import DefaultLists from "./components/DefaultLists/DefaultLists";
+import Lists from "./components/ListButtons/Lists";
 import SelectedState from "./components/SelectedState/SelectedState";
 import Buttons from './components/Buttons/Buttons';
 import MainLayouts from './layouts/MainLayouts';
@@ -18,7 +18,7 @@ export default function App() {
       <div className='bg-neutral-900 px-2'>
         <MainLayouts className='flex justify-center gap-2 max-h-auto min-h-[401px]'>
           <DefaultState className='p-4 rounded max-w-[280px] min-w-fit w-full h-auto' showDefault={showDefault} setShowDefault={setShowDefault} defaultValue={defaultValue}>
-            <DefaultLists className={`list-none rounded-xl ${showDefault ? 'block' : 'hidden'} border-2 border-neutral-400`}>
+            <Lists className={`list-none rounded-xl ${showDefault ? 'block' : 'hidden'} border-2 border-neutral-400`}>
               {showDefault && Data.map(item => 
                 defaultValue === item.name ? 
                   <Buttons className='text-xl border-b p-4 first-of-type:rounded-tl-xl first-of-type:rounded-tr-xl last-of-type:rounded-bl-xl last-of-type:rounded-br-xl last-of-type:border-b-0 select-none flex justify-between' key={item.id}>
@@ -27,10 +27,10 @@ export default function App() {
                   </Buttons>
                   : <Buttons className='text-xl border-b p-4 first-of-type:rounded-tl-xl first-of-type:rounded-tr-xl last-of-type:border-b-0 last-of-type:rounded-bl-xl last-of-type:rounded-br-xl select-none cursor-pointer hover:bg-neutral-800 transition-all duration-75' key={item.id} setToggle={setShowDefault} setter={setDefaultValue}>
                     {item.name}</Buttons>)}
-            </DefaultLists>
+            </Lists>
           </DefaultState>
           <SelectedState className='p-4 rounded max-w-[280px] min-w-fit w-full h-auto' showSelected={showSelected} setShowSelected={setShowSelected} selected={selected}>
-            <DefaultLists className={`list-none rounded-xl ${showSelected ? 'block' : 'hidden'} border-2 border-neutral-400`}>
+            <Lists className={`list-none rounded-xl ${showSelected ? 'block' : 'hidden'} border-2 border-neutral-400`}>
               {showSelected && Data.map(item => 
                 selected === item.name ? 
                 <Buttons className='text-xl border-b p-4 first-of-type:rounded-tl-xl first-of-type:rounded-tr-xl last-of-type:rounded-bl-xl last-of-type:rounded-br-xl last-of-type:border-b-0 select-none flex justify-between' key={item.id}>
@@ -38,7 +38,7 @@ export default function App() {
                   <div className='font-bold'>&#10003;</div>
                 </Buttons>
                 : <Buttons className='text-xl border-b p-4 first-of-type:rounded-tl-xl first-of-type:rounded-tr-xl last-of-type:border-b-0 last-of-type:rounded-bl-xl last-of-type:rounded-br-xl select-none cursor-pointer hover:bg-neutral-800 transition-all duration-75' key={item.id} setToggle={setShowSelected} setter={setSelected}>{item.name}</Buttons>)}
-            </DefaultLists>
+            </Lists>
           </SelectedState>
         </MainLayouts>
       </div>

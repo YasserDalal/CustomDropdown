@@ -1,5 +1,5 @@
 
-export default function DefaultLists({ className, children }) {
+export default function Lists({ className, children }) {
   return (
     <ul className={className}>
       {children}
