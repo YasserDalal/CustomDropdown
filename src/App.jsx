@@ -14,25 +14,34 @@ export default function App() {
   const [selected, setSelected] = useState(Data[0].name);
   const [defaultValue, setDefaultValue] = useState('Select an item');
   return (
-    <div className='bg-stone-700 text-white h-screen flex justify-center items-center min-w-[320px] max-w-screen w-full'>
-      <MainLayouts>
-        <DefaultState className='bg-zinc-800 p-4 rounded w-40 h-72' showDefault={showDefault} setShowDefault={setShowDefault} defaultValue={defaultValue}>
-          <DefaultLists className='list-none bg-gray-700 p-4 rounded'>
-            {showDefault && Data.map(item => 
-              defaultValue === item.name ? 
-                <Buttons className='bg-gray-900' key={item.id}>{item.name}</Buttons>
-                : <Buttons key={item.id} setToggle={setShowDefault} setter={setDefaultValue}>{item.name}</Buttons>)}
-          </DefaultLists>
-        </DefaultState>
-        <SelectedState className='bg-zinc-800 p-4 rounded w-40 h-72' showSelected={showSelected} setShowSelected={setShowSelected} selected={selected}>
-          <DefaultLists className='list-none bg-gray-700 p-4 rounded'>
-            {showSelected && Data.map(item => 
-              selected === item.name ? 
-              <Buttons className='bg-gray-900' key={item.id}>{item.name}</Buttons>
-              : <Buttons key={item.id} setToggle={setShowSelected} setter={setSelected}>{item.name}</Buttons>)}
-          </DefaultLists>
-        </SelectedState>
-      </MainLayouts>
+    <div className='bg-neutral-900 text-white h-screen flex-col content-center min-w-[320px] max-w-screen w-full'>
+      <div className='bg-neutral-900 px-2'>
+        <MainLayouts className='flex justify-center gap-2 max-h-auto min-h-[401px]'>
+          <DefaultState className='p-4 rounded max-w-[280px] min-w-fit w-full h-auto' showDefault={showDefault} setShowDefault={setShowDefault} defaultValue={defaultValue}>
+            <DefaultLists className={`list-none rounded-xl ${showDefault ? 'block' : 'hidden'} border-2 border-neutral-400`}>
+              {showDefault && Data.map(item => 
+                defaultValue === item.name ? 
+                  <Buttons className='text-xl border-b p-4 first-of-type:rounded-tl-xl first-of-type:rounded-tr-xl last-of-type:rounded-bl-xl last-of-type:rounded-br-xl last-of-type:border-b-0 select-none flex justify-between' key={item.id}>
+                    <div className='brightness-50'>{item.name}</div>
+                    <div className='font-bold'>&#10003;</div>
+                  </Buttons>
+                  : <Buttons className='text-xl border-b p-4 first-of-type:rounded-tl-xl first-of-type:rounded-tr-xl last-of-type:border-b-0 last-of-type:rounded-bl-xl last-of-type:rounded-br-xl select-none cursor-pointer hover:bg-neutral-800 transition-all duration-75' key={item.id} setToggle={setShowDefault} setter={setDefaultValue}>
+                    {item.name}</Buttons>)}
+            </DefaultLists>
+          </DefaultState>
+          <SelectedState className='p-4 rounded max-w-[280px] min-w-fit w-full h-auto' showSelected={showSelected} setShowSelected={setShowSelected} selected={selected}>
+            <DefaultLists className={`list-none rounded-xl ${showSelected ? 'block' : 'hidden'} border-2 border-neutral-400`}>
+              {showSelected && Data.map(item => 
+                selected === item.name ? 
+                <Buttons className='text-xl border-b p-4 first-of-type:rounded-tl-xl first-of-type:rounded-tr-xl last-of-type:rounded-bl-xl last-of-type:rounded-br-xl last-of-type:border-b-0 select-none flex justify-between' key={item.id}>
+                  <div className='brightness-50'>{item.name}</div>
+                  <div className='font-bold'>&#10003;</div>
+                </Buttons>
+                : <Buttons className='text-xl border-b p-4 first-of-type:rounded-tl-xl first-of-type:rounded-tr-xl last-of-type:border-b-0 last-of-type:rounded-bl-xl last-of-type:rounded-br-xl select-none cursor-pointer hover:bg-neutral-800 transition-all duration-75' key={item.id} setToggle={setShowSelected} setter={setSelected}>{item.name}</Buttons>)}
+            </DefaultLists>
+          </SelectedState>
+        </MainLayouts>
+      </div>
     </div>
   );
 }
