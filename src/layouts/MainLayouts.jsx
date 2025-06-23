@@ -1,7 +1,7 @@
 
-export default function MainLayouts({ children }) {
+export default function MainLayouts({ className, children }) {
   return (
-    <div className='flex gap-2'>
+    <div className={className}>
       {children}
     </div>
   )
