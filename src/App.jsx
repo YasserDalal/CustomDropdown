@@ -6,6 +6,7 @@ import Lists from "./components/ListButtons/Lists";
 import SelectedState from "./components/SelectedState/SelectedState";
 import Buttons from './components/Buttons/Buttons';
 import MainLayouts from './layouts/MainLayouts';
+import Watermark from './components/Watermark/Watermark';
 import { Data } from "./data/Data";
 
 export default function App() {
@@ -14,7 +15,7 @@ export default function App() {
   const [selected, setSelected] = useState(Data[0].name);
   const [defaultValue, setDefaultValue] = useState('Select an item');
   return (
-    <div className='bg-neutral-900 text-white h-screen flex flex-col justify-center min-w-[320px] max-w-screen w-full'>
+    <div className='bg-neutral-900 text-white h-screen flex flex-col justify-center min-w-[320px] max-w-screen w-full relative'>
       <div className='bg-neutral-900 px-2 flex flex-col justify-center'>
         <MainLayouts className='flex justify-center gap-2 max-h-auto min-h-[401px]'>
           <DefaultState className='max-[360px]:p-0 rounded max-w-[280px] min-w-fit w-full h-auto' showDefault={showDefault} setShowDefault={setShowDefault} defaultValue={defaultValue}>
@@ -42,6 +43,7 @@ export default function App() {
           </SelectedState>
         </MainLayouts>
       </div>
+      <Watermark className="pt-5 text-[14px] text-gray-400 opacity-60 select-none pointer-events-none z-40 text-center absolute bottom-0 left-0 right-0 pb-2"/>
     </div>
   );
 }
