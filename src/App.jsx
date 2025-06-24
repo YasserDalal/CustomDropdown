@@ -14,11 +14,11 @@ export default function App() {
   const [selected, setSelected] = useState(Data[0].name);
   const [defaultValue, setDefaultValue] = useState('Select an item');
   return (
-    <div className='bg-neutral-900 text-white h-screen flex-col content-center min-w-[320px] max-w-screen w-full'>
-      <div className='bg-neutral-900 px-2'>
+    <div className='bg-neutral-900 text-white h-screen flex flex-col justify-center min-w-[320px] max-w-screen w-full'>
+      <div className='bg-neutral-900 px-2 flex flex-col justify-center'>
         <MainLayouts className='flex justify-center gap-2 max-h-auto min-h-[401px]'>
-          <DefaultState className='p-4 rounded max-w-[280px] min-w-fit w-full h-auto' showDefault={showDefault} setShowDefault={setShowDefault} defaultValue={defaultValue}>
-            <Lists className={`list-none rounded-xl ${showDefault ? 'block' : 'hidden'} border-2 border-neutral-400`}>
+          <DefaultState className='max-[360px]:p-0 rounded max-w-[280px] min-w-fit w-full h-auto' showDefault={showDefault} setShowDefault={setShowDefault} defaultValue={defaultValue}>
+            <Lists className={`list-none rounded-xl ${showDefault ? 'block' : 'hidden'} border-2 border-neutral-400 max-h-[400px] overflow-y-auto my-scrollbar`}>
               {showDefault && Data.map(item => 
                 defaultValue === item.name ? 
                   <Buttons className='text-xl border-b p-4 first-of-type:rounded-tl-xl first-of-type:rounded-tr-xl last-of-type:rounded-bl-xl last-of-type:rounded-br-xl last-of-type:border-b-0 select-none flex justify-between' key={item.id}>
@@ -29,8 +29,8 @@ export default function App() {
                     {item.name}</Buttons>)}
             </Lists>
           </DefaultState>
-          <SelectedState className='p-4 rounded max-w-[280px] min-w-fit w-full h-auto' showSelected={showSelected} setShowSelected={setShowSelected} selected={selected}>
-            <Lists className={`list-none rounded-xl ${showSelected ? 'block' : 'hidden'} border-2 border-neutral-400`}>
+          <SelectedState className='max-[360px]:p-0 rounded max-w-[280px] min-w-fit w-full h-auto' showSelected={showSelected} setShowSelected={setShowSelected} selected={selected}>
+            <Lists className={`list-none rounded-xl ${showSelected ? 'block' : 'hidden'} border-2 border-neutral-400 max-h-[400px] overflow-y-auto my-scrollbar`}>
               {showSelected && Data.map(item => 
                 selected === item.name ? 
                 <Buttons className='text-xl border-b p-4 first-of-type:rounded-tl-xl first-of-type:rounded-tr-xl last-of-type:rounded-bl-xl last-of-type:rounded-br-xl last-of-type:border-b-0 select-none flex justify-between' key={item.id}>
