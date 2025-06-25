@@ -24,7 +24,7 @@ export default function App() {
                 defaultValue === item.name ? 
                   <Buttons className='text-xl border-b p-4 first-of-type:rounded-tl-xl first-of-type:rounded-tr-xl last-of-type:rounded-bl-xl last-of-type:rounded-br-xl last-of-type:border-b-0 select-none flex justify-between' key={item.id}>
                     <div className='brightness-50'>{item.name}</div>
-                    <div className='font-bold'>&#10003;</div>
+                    <div className='font-bold text-green-400'>&#10003;</div>
                   </Buttons>
                   : <Buttons className='text-xl border-b p-4 first-of-type:rounded-tl-xl first-of-type:rounded-tr-xl last-of-type:border-b-0 last-of-type:rounded-bl-xl last-of-type:rounded-br-xl select-none cursor-pointer hover:bg-neutral-800 transition-all duration-75' key={item.id} setToggle={setShowDefault} setter={setDefaultValue}>
                     {item.name}</Buttons>)}
@@ -36,7 +36,7 @@ export default function App() {
                 selected === item.name ? 
                 <Buttons className='text-xl border-b p-4 first-of-type:rounded-tl-xl first-of-type:rounded-tr-xl last-of-type:rounded-bl-xl last-of-type:rounded-br-xl last-of-type:border-b-0 select-none flex justify-between' key={item.id}>
                   <div className='brightness-50'>{item.name}</div>
-                  <div className='font-bold'>&#10003;</div>
+                  <div className='font-bold text-green-400'>&#10003;</div>
                 </Buttons>
                 : <Buttons className='text-xl border-b p-4 first-of-type:rounded-tl-xl first-of-type:rounded-tr-xl last-of-type:border-b-0 last-of-type:rounded-bl-xl last-of-type:rounded-br-xl select-none cursor-pointer hover:bg-neutral-800 transition-all duration-75' key={item.id} setToggle={setShowSelected} setter={setSelected}>{item.name}</Buttons>)}
             </Lists>
