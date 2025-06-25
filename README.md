@@ -1,12 +1,30 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## This project is called **Custom Dropdown**
 
-Currently, two official plugins are available:
+#### kindly check the project here → <a href="https://yasserdalal.github.io/CustomDropdown/">Custom Dropdown</a>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is built in **React**.js <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="27"> and **Tailwind CSS** <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS Logo" width="30"/>
 
-## Expanding the ESLint configuration
+Refined **UI/UX** principles to deliver **cleaner** and more **user-friendly** digital experiences.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Developed a simple **Custom Dropdown** to allow users to select from a variety of options.
+
+Consistently implement **Responsive Design** principles across **all projects**, including **small-scale** initiatives.
+<br>
+<br>
+
+## This is the technology I used for this project
+<p align="left">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="40">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40"/> 
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="40" height="40"/>
+</p>
+
+<br>
+<br>
+
+###### For checking:
+
+###### https://roadmap.sh/projects/custom-dropdown
+
+
